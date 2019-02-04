@@ -93,6 +93,8 @@ debugdump:
   call println
   push eax
   push ebx
+  push ecx
+  push esi
   
   mov bx,'AX' 
   call printreg
@@ -137,6 +139,11 @@ debugdump:
   mov bx,'SS'
   call printreg
   
+  mov si,sp
+  mov ax,WORD[si+2+16] ; dig down in stack to saved address (we use 16 bytes)
+  mov bx,'IP' 
+  call printreg
+  
   mov ax,cs
   mov bx,'CS'
   call printreg
@@ -151,6 +158,8 @@ debugdump:
   
   call println
   
+  pop esi
+  pop ecx
   pop ebx
   pop eax
   ret

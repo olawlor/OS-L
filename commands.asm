@@ -139,12 +139,12 @@ signals_code:
 
 signal_bad_opcode:
   mov si,.str
-  call machine_crash_hang
+  jmp machine_crash_hang
      .str: db "CPU detected an invalid opcode. (SIGILL)",0
 
 signal_divide0:
   mov si,.str
-  call machine_crash_hang
+  jmp machine_crash_hang
      .str: db "CPU tried to divide by 0. (SIGFPE)",0
 
 ; Input: si points to a human-readable debug message
