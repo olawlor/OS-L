@@ -222,7 +222,7 @@ chainload_start:
     jmp cmdloop
 
 full_splash_message:
-  db 'Welcome to OS-L, the OS with NO RULES and NO FEATURES!',0
+  db 'Welcome to OS-L, the OS with NO RULES and NO useful features! (v0.2)',0
 
 %include "commands.S"
 
