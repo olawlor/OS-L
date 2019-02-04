@@ -224,9 +224,9 @@ chainload_start:
 full_splash_message:
   db 'Welcome to OS-L, the OS with NO RULES and NO useful features! (v0.2)',0
 
-%include "commands.S"
+%include "commands.asm"
 
-%include "utility.S"
+%include "utility.asm"
 
 ; Round up size to full CHAINLOAD_BYTES (VirtualBox wants full 512-byte sectors)
 times (CHAINLOAD_BYTES - ($-chainload_signature))  db 0x90 
